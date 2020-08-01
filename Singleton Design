@@ -1,0 +1,34 @@
+#Brad Burkett
+
+#SWDV 630 2W 20/SU2 - Week 5 - Singleton Design
+
+#Date 08/01/2020
+
+class Singleton:
+   __instance = None
+   
+   @staticmethod
+   #Static access method
+   def getInstance():
+
+      if Singleton.__instance == None:
+         Singleton()
+      return Singleton.__instance
+    
+   #Private constructor
+   def __init__(self):
+
+      if Singleton.__instance != None:
+         raise Exception("Already a Singleton")
+      else:
+         Singleton.__instance = self
+
+def main():
+
+    object = Singleton()
+    print (object)
+
+    object1 = Singleton.getInstance()
+    print (object1)
+
+main()
