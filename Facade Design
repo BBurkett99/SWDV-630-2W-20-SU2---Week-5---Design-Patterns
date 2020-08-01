@@ -1,0 +1,58 @@
+#Brad Burkett
+
+#SWDV 630 2W 20/SU2 - Week 5 - Facade Design
+
+#Date 08/01/2020
+
+
+class PizzaDough():
+    #Subsystem Number One
+    def stepOne(self):
+            print("Tossing the dough")
+ 
+class PizzaSause():
+    #Subsystem Number Two
+    def stepTwo(self):
+            print("Spreading the sause")
+ 
+class Cheese():
+    #Subsystem Number Three
+    def stepThree(self):
+            print("Sprinkle on the Cheeses")
+
+class PizzaToppings():
+    #Subsystem Number Four
+    def stepFour(self):
+            print("Add the toppings")
+ 
+class BakePizza():
+    #Subsystem Number Five
+    def stepFive(self):
+            print("Bake the pizza") 
+ 
+class BuildPizza:
+    #Facade
+    def __init__(self):
+        self.PizzaDough = PizzaDough()
+        self.PizzaSause = PizzaSause()
+        self.Cheese = Cheese()
+        self.PizzaToppings = PizzaToppings()
+        self.BakePizza = BakePizza()
+ 
+    def completePizza(self):
+        print("Basics of making a pizza""\n")
+        self.PizzaDough.stepOne()
+        self.PizzaSause.stepTwo()
+        self.Cheese.stepThree()
+        self.PizzaToppings.stepFour()
+        self.BakePizza.stepFive()
+
+
+
+def main():
+    
+    finishedPizza = BuildPizza()
+    finishedPizza.completePizza()
+
+main()
+
